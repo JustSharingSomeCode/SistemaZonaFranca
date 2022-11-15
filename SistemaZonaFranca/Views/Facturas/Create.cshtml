@@ -1,10 +1,10 @@
 ﻿@model SistemaZonaFranca.Models.Factura
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Crear";
 }
 
-<h1>Create</h1>
+<h1>Crear</h1>
 
 <h4>Factura</h4>
 <hr />
@@ -12,24 +12,26 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div class="form-group mb-2">
                 <label asp-for="PersonaId" class="control-label"></label>
                 <select asp-for="PersonaId" class ="form-control" asp-items="ViewBag.PersonaId"></select>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-2">
                 <label asp-for="Estado" class="control-label"></label>
                 <input asp-for="Estado" class="form-control" />
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Crear" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
+<hr />
+
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-primary" asp-action="Index">Volver a la lista</a>
 </div>
 
 @section Scripts {
