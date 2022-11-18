@@ -1,0 +1,36 @@
+﻿@model IEnumerable<SistemaZonaFranca.Models.Pais>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Paises</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Crear nuevo</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td class="d-flex justify-content-end gap-2 align-content-center">
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a> 
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalles</a> 
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

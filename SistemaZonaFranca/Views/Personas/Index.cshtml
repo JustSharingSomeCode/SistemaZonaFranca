@@ -1,0 +1,54 @@
+﻿@model IEnumerable<SistemaZonaFranca.Models.Persona>
+
+@{
+    ViewData["Title"] = "Personas";
+}
+
+<h1>Personas</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Crear nuevo</a>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Edad)
+                </td>
+                <td class="d-flex justify-content-end gap-2 align-content-center">
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Cedula">Editar</a>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Cedula">Detalles</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Cedula">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
